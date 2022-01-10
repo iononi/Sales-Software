@@ -41,6 +41,9 @@ public class Entrada extends javax.swing.JFrame {
     private final BillQuery billQ;
     private final InvoiceQuery invoiceQ;
     private final ticket ticket;
+    private final UpdateCategory updte_cat;
+    private final UpdateWaiter updte_wat;
+    private final UpdateChef updte_chef;
     private DefaultTableModel dtm, tm;
     private BD_Connection controller;
     private Object data[] = new Object[5];
@@ -71,9 +74,11 @@ public class Entrada extends javax.swing.JFrame {
         invoiceQ = new InvoiceQuery();
         controller = new BD_Connection();
         ticket = new ticket();
+        updte_cat = new UpdateCategory();
+        updte_wat = new UpdateWaiter();
+        updte_chef = new UpdateChef();
 
-        //controller.getRS().getString();
-        loadToCB();
+        loadToCB();// loads the categories avaiblable into the JComboBox placed the search area
 
         tm = (DefaultTableModel) ticket.getTicketTable().getModel();
         ticket.getTicketTable().setDefaultRenderer(Object.class, new ImageRender());
@@ -112,6 +117,7 @@ public class Entrada extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menu_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -180,8 +186,15 @@ public class Entrada extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
         about_it_mi = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        modify_menu = new javax.swing.JMenu();
+        mdfy_cat = new javax.swing.JMenuItem();
+        mdfy_turn = new javax.swing.JMenu();
+        mdfy_waiter = new javax.swing.JMenuItem();
+        mdfy_chef = new javax.swing.JMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Los Farolitos Veracruz");
@@ -720,6 +733,38 @@ public class Entrada extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        modify_menu.setText("Modificar");
+
+        mdfy_cat.setText("Actualizar categoria");
+        mdfy_cat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mdfy_catActionPerformed(evt);
+            }
+        });
+        modify_menu.add(mdfy_cat);
+
+        mdfy_turn.setText("Actualizar turno");
+
+        mdfy_waiter.setText("Mesero");
+        mdfy_waiter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mdfy_waiterActionPerformed(evt);
+            }
+        });
+        mdfy_turn.add(mdfy_waiter);
+
+        mdfy_chef.setText("Cocinero");
+        mdfy_chef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mdfy_chefActionPerformed(evt);
+            }
+        });
+        mdfy_turn.add(mdfy_chef);
+
+        modify_menu.add(mdfy_turn);
+
+        jMenuBar1.add(modify_menu);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1097,6 +1142,24 @@ public class Entrada extends javax.swing.JFrame {
 
     }//GEN-LAST:event_search_btnActionPerformed
 
+    private void mdfy_chefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdfy_chefActionPerformed
+        // TODO add your handling code here:
+        desk.add(updte_chef);
+        updte_chef.show();
+    }//GEN-LAST:event_mdfy_chefActionPerformed
+
+    private void mdfy_catActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdfy_catActionPerformed
+        // TODO add your handling code here:
+        desk.add(updte_cat);
+        updte_cat.show();
+    }//GEN-LAST:event_mdfy_catActionPerformed
+
+    private void mdfy_waiterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdfy_waiterActionPerformed
+        // TODO add your handling code here:
+        desk.add(updte_wat);
+        updte_wat.show();
+    }//GEN-LAST:event_mdfy_waiterActionPerformed
+
     //Carga las categorias en el combo box
     public void loadToCB() {
         try {
@@ -1278,6 +1341,7 @@ public class Entrada extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1291,10 +1355,15 @@ public class Entrada extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPopupMenu.Separator jSeparator8;
+    private javax.swing.JMenuItem mdfy_cat;
+    private javax.swing.JMenuItem mdfy_chef;
+    private javax.swing.JMenu mdfy_turn;
+    private javax.swing.JMenuItem mdfy_waiter;
     private javax.swing.JTextField mealFilter;
     private javax.swing.JTextField mealTxt;
     private javax.swing.JTable menuTable;
     private javax.swing.JButton menu_btn;
+    private javax.swing.JMenu modify_menu;
     private javax.swing.JButton order_btn;
     private javax.swing.JTextField payCheck;
     private javax.swing.JButton pay_btn;
