@@ -1207,17 +1207,24 @@ public class Entrada extends javax.swing.JFrame {
                 data[2] = controller.getString(3);
                 data[3] = controller.getFloat(4);
 
+                // Obtenemos la imagen
                 try {
-                    File f = new File("C:\\Users\\Eduardo\\Documents\\ALGORITMOS\\Java\\NetBeansProjects\\FPOO\\SQL_Connection\\src\\imagenes\\" + controller.getString(5));
-                    BufferedImage bi = ImageIO.read(f);
-                    image = bi.getScaledInstance(90, 60, Image.SCALE_DEFAULT);
+                    File f = new File(controller.getString(5)); // creamos un objeto file con la ruta hacia la imagen. Hay un metodo que te da
+                                                                // el path completo a partir de un path relativo
+                    String imageLocation = f.getAbsolutePath()
+                            .replaceFirst(controller.getString(5), "") + "src" + File.separator +
+                            "imagenes" + File.separator + f.getName();
+                    System.out.println(imageLocation);
+                    BufferedImage bi = ImageIO.read(new File(imageLocation));
+                    image = bi.getScaledInstance(90, 60, Image.SCALE_DEFAULT); // Escalamos el tamaño de la imagen
                 } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al procesar la imagen " + controller.getString(5), "Error de procesamiento", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Error al procesar la imagen " + controller.getString(5),
+                            "Error de procesamiento", JOptionPane.ERROR_MESSAGE);
                     break;
                 }
 
                 data[4] = new JLabel(new ImageIcon(image));
-                dtm.addRow(data);
+                dtm.addRow(data); // agregamos la imagen al modelo de la tabla, es decir, agregamos la fila
             } while (controller.getRS().next());
         } catch (SQLException e) {
             Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
