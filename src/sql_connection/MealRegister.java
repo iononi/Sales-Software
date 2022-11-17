@@ -213,8 +213,8 @@ public class MealRegister extends javax.swing.JInternalFrame {
         int response = fileChooser.showOpenDialog(this);
 
         if (response == JFileChooser.APPROVE_OPTION) {
-            ruta = fileChooser.getSelectedFile().getPath();
-            ruta_bd = fileChooser.getSelectedFile().getName();
+            ruta = fileChooser.getSelectedFile().getPath(); // ruta absoluta
+            ruta_bd = fileChooser.getSelectedFile().getName(); // esta es la ruta relativa, por ejemplo: "imagen2.jpeg"
 
             imagen_btn.setText(ruta);
 
