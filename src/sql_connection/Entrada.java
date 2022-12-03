@@ -930,7 +930,7 @@ public class Entrada extends javax.swing.JFrame {
 
             controller.closeRS();
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo ejecutar la consulta.", "Error de Conexion", JOptionPane.ERROR_MESSAGE);
         } finally {
             controller.closeStmt();
@@ -1132,7 +1132,7 @@ public class Entrada extends javax.swing.JFrame {
             }
             controller.closeRS();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo ejecutar la consulta.", "Error de Conexion", JOptionPane.ERROR_MESSAGE);
         } finally {
             controller.closeStmt();
@@ -1177,7 +1177,7 @@ public class Entrada extends javax.swing.JFrame {
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar las categorias disponibles", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             controller.closeStmt();
@@ -1227,7 +1227,7 @@ public class Entrada extends javax.swing.JFrame {
                 dtm.addRow(data); // agregamos la imagen al modelo de la tabla, es decir, agregamos la fila
             } while (controller.getRS().next());
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo ejecutar la consulta.", "Error de Conexion", JOptionPane.ERROR_MESSAGE);
         } finally {
             controller.closeRS();
@@ -1259,7 +1259,7 @@ public class Entrada extends javax.swing.JFrame {
                 }
             }
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo ejecutar la consulta.", "Error de Conexion", JOptionPane.ERROR_MESSAGE);
         }
     }

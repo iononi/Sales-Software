@@ -173,7 +173,7 @@ public class ChefRegister extends javax.swing.JInternalFrame implements Extraer 
                     lastName2.getText(), turno));
             JOptionPane.showMessageDialog(null, "Se ha registrado al nuevo cocinero(a).", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: No se pudo registrar al cocinero(a).", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_btnActionPerformed

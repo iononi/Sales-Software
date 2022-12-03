@@ -132,7 +132,7 @@ public class InVoiceRegister extends javax.swing.JInternalFrame {
                     Integer.parseInt(meal.getText()), Integer.parseInt(quanty_field.getText())));
             JOptionPane.showMessageDialog(null, "Se ha registrado los detalles de la facutra.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo registrar los detalles de la factura.", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

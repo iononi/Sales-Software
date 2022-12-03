@@ -146,7 +146,7 @@ public class CustomerRegister extends javax.swing.JInternalFrame {
                     comments.getText()));
             JOptionPane.showMessageDialog(null, "Se ha registrado el nuevo cliente.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo registrar el cliente.", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

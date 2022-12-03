@@ -150,7 +150,7 @@ public class UpdateChef extends javax.swing.JInternalFrame {
             ctr.getStmt().execute(String.format("UPDATE cocineros SET Turno = '%s' WHERE ID_Cocinero = '%s'", (new_turnCB.getSelectedItem().toString().equals("Matutino")) ? "M" : "V", chefCB.getSelectedItem().toString()));
             JOptionPane.showMessageDialog(null, "Se ha modificado el turno del cocinero " + chefCB.getSelectedItem().toString(), "Modificacion exitosa", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al modificar el turno del cocinero", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             ctr.closeStmt();
@@ -174,7 +174,7 @@ public class UpdateChef extends javax.swing.JInternalFrame {
                 ctr.closeRS();
             }
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar los cocineros registrados", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             ctr.closeStmt();

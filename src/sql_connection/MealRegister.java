@@ -42,7 +42,7 @@ public class MealRegister extends javax.swing.JInternalFrame {
             contr.closeStmt();
             contr.disconnect();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar las categorias disponibles", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -197,7 +197,7 @@ public class MealRegister extends javax.swing.JInternalFrame {
                     platillo.getText(), descrip.getText(), Float.parseFloat(precio.getText()), imagen_btn.getText(), categoryCB.getSelectedItem().toString()));
             JOptionPane.showMessageDialog(null, "Se ha registrado el platillo.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo registrar el platillo.", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_btnActionPerformed

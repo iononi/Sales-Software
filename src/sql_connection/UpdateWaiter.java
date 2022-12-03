@@ -144,7 +144,7 @@ public class UpdateWaiter extends javax.swing.JInternalFrame {
             ctr.getStmt().execute(String.format("UPDATE meseros SET Turno = '%s' WHERE ID_Mesero = '%s'", (new_turnCB.getSelectedItem().toString().equals("Matutino")) ? "M" : "V", waiterCB.getSelectedItem().toString()));
             JOptionPane.showMessageDialog(null, "Se ha modificado el turno del mesero " + waiterCB.getSelectedItem().toString(), "Modificacion exitosa", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al modificar el turno del mesero", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             ctr.closeStmt();
@@ -168,7 +168,7 @@ public class UpdateWaiter extends javax.swing.JInternalFrame {
                 ctr.closeRS();
             }
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar los meseros registrados", "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             ctr.closeStmt();

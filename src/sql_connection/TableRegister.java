@@ -124,7 +124,7 @@ public class TableRegister extends javax.swing.JInternalFrame {
             ctr.getStmt().execute(String.format("INSERT INTO mesa(Num_Comensales, Ubicacion) VALUES (%d, '%s')", Integer.parseInt(eaters.getText()), loc.getText()));
             JOptionPane.showMessageDialog(null, "Se ha registrado la nueva mesa.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo completar el registro.", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed

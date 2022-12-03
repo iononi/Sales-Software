@@ -151,7 +151,7 @@ public class UpdateCategory extends javax.swing.JInternalFrame {
             contr.getStmt().execute(String.format("UPDATE platillos SET R_Categoria = (SELECT ID_Categoria FROM categorias WHERE categoria = '%s') WHERE platillo = '%s'", new_category.getSelectedItem().toString(), meal_cb.getSelectedItem().toString()));
             JOptionPane.showMessageDialog(null, "Se ha modificado la categoria del platillo " + meal_cb.getSelectedItem().toString(), "Modificacion exitosa", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al modificar la categoria del platillo", "Error", JOptionPane.ERROR_MESSAGE);
         }
         finally {
@@ -177,7 +177,7 @@ public class UpdateCategory extends javax.swing.JInternalFrame {
             contr.closeStmt();
             contr.disconnect();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar las categorias disponibles", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -200,7 +200,7 @@ public class UpdateCategory extends javax.swing.JInternalFrame {
             contr.closeStmt();
             contr.disconnect();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "Sucedio un error al recuperar los platillos disponibles", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
