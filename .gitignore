@@ -7,6 +7,15 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+# IntelliJ Ultimate specific #
+.idea/
+
+# Binaries #
+out/
+
+# iml files #
+*.iml
+
 # Class Files #
 *.class
 
