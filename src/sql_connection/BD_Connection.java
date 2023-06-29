@@ -37,9 +37,9 @@ public class BD_Connection extends UserKey {
             con = DriverManager.getConnection(super.getURL(), super.getUser(), super.getPassword());
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "ERROR: something went wrong while trying to establish connection to DB.", "Cannot establish connection to DB", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -48,7 +48,7 @@ public class BD_Connection extends UserKey {
         try {
             stmt = con.createStatement();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -56,7 +56,7 @@ public class BD_Connection extends UserKey {
         try {
             rs = stmt.executeQuery(query);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
             JOptionPane.showMessageDialog(null, "ERROR: cannot execute query.", "Connection Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
@@ -76,7 +76,7 @@ public class BD_Connection extends UserKey {
         try {
             rs.close();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -84,7 +84,7 @@ public class BD_Connection extends UserKey {
         try {
             stmt.close();
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -93,7 +93,7 @@ public class BD_Connection extends UserKey {
         try {
             data = rs.getString(column);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         return data;
     }
@@ -103,7 +103,7 @@ public class BD_Connection extends UserKey {
         try {
             data = rs.getInt(column);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         return data;
     }
@@ -113,7 +113,7 @@ public class BD_Connection extends UserKey {
         try {
             data = rs.getFloat(column);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         return data;
     }
@@ -123,7 +123,7 @@ public class BD_Connection extends UserKey {
         try {
             data = rs.getDate(column);
         } catch (SQLException e) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         return data;
     }

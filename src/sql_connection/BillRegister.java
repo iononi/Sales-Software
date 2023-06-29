@@ -136,7 +136,7 @@ public class BillRegister extends javax.swing.JInternalFrame {
             ctr.getStmt().execute(String.format("INSERT INTO factura(R_Cliente, R_Mesero, R_Mesa, Fecha_Factura) VALUES (%d, '%s', %d, current_date())", Integer.parseInt(r_customer.getText()), r_waiter.getText(), Integer.parseInt(r_table.getText())));
             JOptionPane.showMessageDialog(null, "Se ha registrado la factura.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: no se pudo registrar la factura.", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_btnActionPerformed

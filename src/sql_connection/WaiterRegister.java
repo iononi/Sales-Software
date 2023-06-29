@@ -173,7 +173,7 @@ public class WaiterRegister extends javax.swing.JInternalFrame implements Extrae
                     lastName1.getText(), lastName2.getText(), turno));
             JOptionPane.showMessageDialog(null, "Se ha registrado el nuevo mesero(a).", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException ex) {
-            Logger.getLogger(SQL_Connection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BD_Connection.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "ERROR: No se pudo registrar al mesero(a).", "Error de registro", JOptionPane.ERROR_MESSAGE);
         }
       
